@@ -3,25 +3,200 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+        --text-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--text-rgb));
+    background: rgb(var(--foreground-rgb));
 }
+
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #344054;
+}
+
+/* START: Input */
+.input-wrapper {
+    margin-top: 20px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 18px;
+    color: #344054;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    font-size: 16px;
+    font-weight: 400;
+    width: 250px;
+    color: #344054;
+    background: #ffffff;
+    border: 1px solid #d0d5dd;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #667085;
+}
+
+input:focus {
+}
+
+.error {
+    color: #db4437;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 12px;
+    margin-top: 4px;
+}
+/* END: Input */
+
+/* START: Chat Layout*/
+.chat-layout  {
+    width: 90%;
+    margin: 50px auto;
+    height: auto;
+}
+/* END: Chat Layout*/
+
+/* START: Header*/
+.header-div {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background: orange;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    padding: 0 50px;
+}
+
+.header-item {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.header-item:hover {
+    color: rgb(235, 233, 233);
+    
+}
+/* END: Header*/
+
+/* START: Client Message Sender */
+.submit-btn {
+    color: #222222;
+    border: 1px solid #222222;
+}
+.generic-button {
+    font-weight: 500;
+    font-size: 16px;
+    background: transparent;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    min-width: 150px;
+    padding: 7px 0;
+    margin-top: 37px;
+}
+.red-button {
+    color: darkred;
+    border: 1px solid darkred;
+}
+/* END: Client Message Sender */
+
+/* START: Messages */
+.messages-container {
+    height: 750px;
+    width: 800px;
+    border: 3px solid gray;
+    border-radius: 8px;
+    right: 100px;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    overflow-y: scroll;
+}
+.message-row {
+    width: 100%;
+    display: flex;
+}
+
+.message-row.user-message {
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.chatbot-message .message-item {
+    background: aliceblue;
+}
+
+.message-item {
+    border-radius: 8px;
+    border: 2px solid gray;
+    height: auto;
+    max-height: 80px;
+    padding: 10px;
+}
+/* END: Messages */
+
+/* START: Archive */
+
+.archive-container {
+    display: flex;
+    width: 90%;
+    height: 600px;
+    background: #e2e7ea;
+    margin: 50px auto;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.archive-section {
+    background: white;
+    width: 48%;
+    gap: 20px;
+    display: flex;
+    border-radius: 8px;
+    border: 3px solid gray;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.conversation-card {
+    border: 2px solid gray;
+    border-radius: 8px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.transcript-message-card {
+    border: 2px solid gray;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+/* END: Archive */
